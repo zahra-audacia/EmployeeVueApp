@@ -3,6 +3,9 @@ import { defineComponent } from "vue";
 import { Employee } from "@/models/employee.model";
 
 export default defineComponent({
+  // props: {
+  //   showEmployeeTable
+  // },
   data() {
     return {
       //Data initializers for employee table/form
@@ -43,10 +46,12 @@ export default defineComponent({
         this.salary
       );
       console.log("onSubmit");
-      //when the click event occurs, the newEmployee is added?? not 100% sure tbh
       this.$emit("click", newEmployee);
     },
   },
+  // cancelAdding(): void {
+  //   showEmployeeForm = false
+  // }
 });
 </script>
 
@@ -77,7 +82,7 @@ export default defineComponent({
   </form>
 </template>
 
-<style>
+<style scoped>
 .text-field {
   color: black;
   text-decoration: underline;
@@ -104,7 +109,6 @@ export default defineComponent({
 .right {
   right: 0;
 }
-
 /* If you want the content centered horizontally and vertically */
 .centered {
   position: absolute;

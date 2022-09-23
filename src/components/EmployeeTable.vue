@@ -37,10 +37,6 @@ export default defineComponent({
         this.currentPage * this.pageSize,
         this.currentPage * this.pageSize + this.pageSize
       );
-
-      // if (this.visibleEmployees.length === 0 && this.currentPage > 0) {
-      //   this.updatePage(this.currentPage - 1);
-      // }
     },
   },
   created() {
@@ -75,9 +71,8 @@ export default defineComponent({
     </tbody>
   </table>
   <footer>
-    <!-- most confused about bit? so the PagingFooter  -->
     <PagingFooter
-      :employeeTableData="employeeTableData"
+      :employeeTableData="employeeTableData" 
       @page:update="updatePage"
       :currentPage="currentPage"
       :pageSize="pageSize"
@@ -86,7 +81,7 @@ export default defineComponent({
   </footer>
 </template>
 
-<style>
+<style scoped>
 table,
 th,
 td {

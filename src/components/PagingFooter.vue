@@ -58,7 +58,7 @@ export default defineComponent({
   </div>
 </template>
 
-<style>
+<style scoped>
 .pagination-button {
   cursor: pointer;
 }
